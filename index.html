@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ID Card Kafka</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Tailwind CSS (Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              maroon: "#7f1d1d",
+              primary: "#e63946",
+              dark: "#2b2b2b",
+              light: "#e9ecef",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <div class="animated-bg" aria-hidden="true">
+      <div class="grad"></div>
+      <span class="dot d1"></span>
+      <span class="dot d2"></span>
+      <span class="dot d3"></span>
+    </div>
+    <main class="container mx-auto p-6 flex items-center justify-center min-h-screen">
+      <section class="id-card w-full max-w-4xl rounded-xl overflow-hidden shadow-xl">
+        <div class="panel left">
+          <div class="brand">
+            <div class="logo"><img src="telu.png" alt="logo univ" class="object-contain" /></div>
+            <div class="uni">Telkom University</div>
+          </div>
+
+          <div class="photo-wrap">
+            <img src="pasfotokafka.jpg" alt="Foto Profil" class="photo" />
+          </div>
+
+          <div class="details">
+            <h1 class="full-name">M KAFKA RAHFI GIFASSYA</h1>
+            <p class="nickname">Panggilan: <span>Kafka</span></p>
+            <p class="study">Program Studi: <strong>Informatika</strong></p>
+            <p class="faculty">Fakultas: <strong>Informatika</strong></p>
+            <p class="origin">Asal Daerah: <span>Pesisir Barat, Lampung</span></p>
+            <p class="group">Nomor Kelompok: <span>501001</span></p>
+            <p class="instagram">Instagram: <a href="https://instagram.com/isnotkafka" target="_blank" rel="noopener noreferrer">@isnotkafka</a></p>
+          </div>
+        </div>
+
+        <div class="panel right">
+          <div class="accent"></div>
+          <div class="meta">
+            <div class="id-type">PKKMB</div>
+            <div class="valid"><strong>2025</strong></div>
+          </div>
+
+          <div class="qr">
+            <!-- Placeholder untuk QR atau nomor ID yang bisa diganti -->
+            <div class="qr-box">ID</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

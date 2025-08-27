@@ -1,0 +1,269 @@
+:root {
+  --red: #e63946;
+  --maroon: #7f1d1d;
+  --dark-gray: #2b2b2b;
+  --light-gray: #e9ecef;
+  --logo-size: 80px; /* default logo size - change as needed */
+  --card-width: 900px;
+  --card-height: 540px;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #0f1115 0%, #0b0c0e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #e6e6e6;
+  overflow-x: hidden;
+}
+
+/* container positioned above animated background */
+.container {
+  padding: 24px;
+  position: relative;
+  z-index: 3;
+}
+.id-card {
+  width: var(--card-width);
+  height: var(--card-height);
+  display: flex;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(2, 6, 23, 0.6);
+  background: linear-gradient(180deg, rgba(10, 12, 15, 0.6), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(6px);
+}
+
+.panel {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+}
+.panel.left {
+  flex: 2;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+}
+.panel.right {
+  flex: 1;
+  background: linear-gradient(180deg, var(--maroon), var(--red));
+  color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.logo {
+  width: var(--logo-size);
+  height: var(--logo-size);
+  border-radius: 10px;
+  background: var(--dark-gray);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: calc(var(--logo-size) * 0.28);
+}
+/* ensure any <img> inside .logo fits nicely */
+.logo img {
+  display: block;
+  max-width: 84%;
+  max-height: 84%;
+  object-fit: contain;
+}
+.uni {
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.photo-wrap {
+  width: 190px;
+  height: 240px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+  margin-bottom: 20px;
+}
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.details {
+  margin-top: 6px;
+}
+.full-name {
+  font-size: 22px;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.6px;
+  color: #fff;
+}
+.nickname,
+.study,
+.faculty,
+.origin,
+.instagram,
+.group {
+  margin: 6px 0;
+  color: #dcdcdc;
+}
+.nickname span,
+.origin span,
+.group span {
+  font-weight: 600;
+}
+.study strong,
+.faculty strong {
+  font-weight: 700;
+}
+.instagram a {
+  color: var(--maroon);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.panel.right .accent {
+  position: absolute;
+  left: -40px;
+  top: -40px;
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.04);
+  transform: rotate(25deg);
+  border-radius: 18px;
+}
+.meta {
+  margin-top: 36px;
+  padding: 22px;
+}
+.id-type {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.valid {
+  margin-top: 10px;
+  opacity: 0.95;
+}
+
+.qr {
+  margin-top: auto;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qr-box {
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  color: var(--maroon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* Animated background styles */
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.animated-bg .grad {
+  position: absolute;
+  inset: -20% -20%;
+  background: linear-gradient(135deg, rgba(11, 12, 14, 0.9) 0%, rgba(20, 22, 26, 0.7) 30%, rgba(230, 57, 70, 0.12) 60%);
+  filter: blur(50px);
+  opacity: 0.9;
+  background-size: 300% 300%;
+  animation: gradMove 20s linear infinite;
+}
+.animated-bg .dot {
+  position: absolute;
+  border-radius: 999px;
+  mix-blend-mode: screen;
+  opacity: 0.06;
+}
+.animated-bg .d1 {
+  width: 420px;
+  height: 420px;
+  left: 6%;
+  top: 8%;
+  background: radial-gradient(circle, #e63946, transparent);
+}
+.animated-bg .d2 {
+  width: 300px;
+  height: 300px;
+  right: 10%;
+  top: 20%;
+  background: radial-gradient(circle, rgba(230, 57, 70, 0.6), transparent);
+}
+.animated-bg .d3 {
+  width: 220px;
+  height: 220px;
+  left: 40%;
+  bottom: 10%;
+  background: radial-gradient(circle, rgba(127, 29, 29, 0.28), transparent);
+}
+
+@keyframes gradMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-bg .grad {
+    animation: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  :root {
+    --card-width: 720px;
+  }
+  .photo-wrap {
+    width: 140px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 620px) {
+  .id-card {
+    flex-direction: column;
+    height: auto;
+    width: 360px;
+  }
+  .panel.right {
+    order: 2;
+  }
+  .panel.left {
+    order: 1;
+  }
+}
